@@ -1,77 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">  
-    <link rel="stylesheet" href="slider.css">  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <nav class="navbar">
-        <ul>
-            <li>
-                <div class="logo-container">
-                    <img src="LOGO.png" alt="Logo">
-                </div>
-            </li>
-            <li><a href="#">My Health</a></li>
-            <li><a href="tc.html">Training Corner</a></li>
-            <li><a href="rem.html">Reminiscing</a></li>
-            <li class="right"><span class="username"> user </span></li>
-
-            
-            <li>
-                <button class="logout-btn" onclick="logout()">Logout →</button>
-            </li>
-            
-        </ul>
-    </nav>
-    <br>
-    <div id="memory-quotes"></div>
-
-    <br>
-    <div class="welcome">
-        Let's unlock the potential of your mind together.
-        <br>
-       Your memory transformation starts now!
-    </div>
-    <div class="slider-wrapper">
-        <div class="slider">
-            <div class="slide"><a href="tc.html"><img src="Exercise Your Brain!.png" alt="Image 1"></a></div>
-            <div class="slide"> <a href="task.html"><img src="World Health Day.png" alt="Image 2"></a></div>
-            <div class="slide"> <img src="Our New Location.png" alt="Image 3"></div>
-        </div>
-    </div>
-    <br>
-    <br>
-    <div class="container">
-    <div class="image-container">
-        <img src="Community.png" alt="Consult Top Psychologists Online">
-      </div>
-      <div class="image-container">
-        <img src="connect for instant help.jpg" alt="Connect With Psychologists Instantly">
-      </div>
-    </div>
-
-    <div class="bnavbar">
-        <a href="home.html" id="homeLink"><img src="home.png" alt="Home">Home</a>
-        <a href="task.html" id="timelineLink"><img src="timeline.png" alt="Timeline">Timeline</a>
-        <a href="#" id="profileLink"><img src="profile.png" alt="Profile">Profile</a>
-      </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-
-    <script src="script.js"></script>
-    <script src="quotes.js"></script>
-    <script>
-        function logout() {
+  <div class="container">
+    <input type="checkbox" id="flip">
+    <div class="cover">
         
-            window.location.href = "index.html";
-        }
+      <div class="front">
+        <img src="Don't worry, we'll remember for you.png" alt=""> 
+        <div class="text">
+          <span class="text-1">Don't worry, <br> we'll remember for you...</span>
+        </div>
+      </div>
+      <div class="back">
+        <img class="backImg" src="Don't worry, we'll remember for you.png" alt=""> 
+        <div class="text">
+          <span class="text-1">Don't worry, <br> we'll remember for you...</span>
+        </div>
+      </div>
+    </div>
+    <div class="forms">
+      <div class="form-content">
+        <div class="login-form">
+          <div class="title">Login</div>
+          <form>
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" name="email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" name="password" required>
+              </div>
+              <div class="text"><a href="#">Forgot password?</a></div>
+              <div class="button input-box">
+                <button type="button" onclick="redirectToHome()">Submit</button>
+              </div>
+              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+            </div>
+          </form>
+        </div>
+        <div class="signup-form">
+          <div class="title">Signup</div>
+          <form>
+            <div class="input-boxes">
+              <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Enter your name" name="name" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-envelope"></i>
+                <input type="text" placeholder="Enter your email" name="email" required>
+              </div>
+              <div class="input-box">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Enter your password" name="password" required>
+              </div>            
+              <div class="button input-box">
+                <button type="button" onclick="redirectToHome()">Submit</button>
+              </div>
+              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    </script>
-    
+  <script>
+    function redirectToHome() {
+      window.location.href = "home.html";
+    }
+  </script>
 </body>
 </html>
+            
