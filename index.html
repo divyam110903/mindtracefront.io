@@ -83,9 +83,11 @@
 
             var email = document.getElementById("loginEmail").value;
             var password = document.getElementById("loginPassword").value;
+            var emailRegex = /\S+@\S+\.\S+/;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
-            if (email === "" || password === "") {
-                alert("Please fill in all fields for login.");
+            if (email === "" || password === "" || !emailRegex.test(email) || !passwordRegex.test(password)) {
+                alert("Please enter a valid email address and password (at least 8 characters, one uppercase, one lowercase, one number, and one special character).");
                 return false;
             } else {
                 redirectToHome();
@@ -93,15 +95,18 @@
             }
         }
 
+      
         function validateSignupForm(event) {
             event.preventDefault(); // Prevent the default form submission
 
             var name = document.getElementById("signupName").value;
             var email = document.getElementById("signupEmail").value;
             var password = document.getElementById("signupPassword").value;
+            var emailRegex = /\S+@\S+\.\S+/;
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
 
-            if (name === "" || email === "" || password === "") {
-                alert("Please fill in all fields for signup.");
+            if (name === "" || email === "" || password === "" || !emailRegex.test(email) || !passwordRegex.test(password)) {
+                alert("Please enter a valid name, email address, and password (at least 8 characters, one uppercase, one lowercase, one number, and one special character).");
                 return false;
             } else {
                 redirectToHome();
