@@ -29,19 +29,19 @@
       <div class="form-content">
         <div class="login-form">
           <div class="title">Login</div>
-          <form>
+          <form id="loginForm" onsubmit="return validateLoginForm()">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" name="email" required>
+                <input type="text" id="loginEmail" placeholder="Enter your email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" name="password" required>
+                <input type="password" id="loginPassword" placeholder="Enter your password" name="password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">
-                <button type="button" onclick="redirectToHome()">Submit</button>
+                <button type="submit">Submit</button>
               </div>
               <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
             </div>
@@ -49,22 +49,22 @@
         </div>
         <div class="signup-form">
           <div class="title">Signup</div>
-          <form>
+          <form id="signupForm" onsubmit="return validateSignupForm()">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-user"></i>
-                <input type="text" placeholder="Enter your name" name="name" required>
+                <input type="text" id="signupName" placeholder="Enter your name" name="name" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" name="email" required>
+                <input type="text" id="signupEmail" placeholder="Enter your email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" name="password" required>
+                <input type="password" id="signupPassword" placeholder="Enter your password" name="password" required>
               </div>            
               <div class="button input-box">
-                <button type="button" onclick="redirectToHome()">Submit</button>
+                <button type="submit">Submit</button>
               </div>
               <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
             </div>
@@ -75,10 +75,34 @@
   </div>
 
   <script>
+    function validateLoginForm() {
+      var email = document.getElementById("loginEmail").value;
+      var password = document.getElementById("loginPassword").value;
+
+      if (email === "" || password === "") {
+        alert("Please fill in all fields for login.");
+        return false;
+      }
+
+      return true;
+    }
+
+    function validateSignupForm() {
+      var name = document.getElementById("signupName").value;
+      var email = document.getElementById("signupEmail").value;
+      var password = document.getElementById("signupPassword").value;
+
+      if (name === "" || email === "" || password === "") {
+        alert("Please fill in all fields for signup.");
+        return false;
+      }
+
+      return true;
+    }
+
     function redirectToHome() {
       window.location.href = "home.html";
     }
   </script>
 </body>
 </html>
-            
