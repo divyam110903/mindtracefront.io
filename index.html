@@ -1,113 +1,113 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel="stylesheet" href="login.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <div class="container">
-    <input type="checkbox" id="flip">
-    <div class="cover">
-        
-      <div class="front">
-        <img src="Don't worry, we'll remember for you.png" alt=""> 
-        <div class="text">
-          <span class="text-1">Don't worry, <br> we'll remember for you...</span>
-        </div>
-      </div>
-      <div class="back">
-        <img class="backImg" src="Don't worry, we'll remember for you.png" alt=""> 
-        <div class="text">
-          <span class="text-1">Don't worry, <br> we'll remember for you...</span>
-        </div>
-      </div>
-    </div>
-    <div class="forms">
-      <div class="form-content">
-        <div class="login-form">
-          <div class="title">Login</div>
-          <form id="loginForm" onsubmit="return validateLoginForm()">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" id="loginEmail" placeholder="Enter your email" name="email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="loginPassword" placeholder="Enter your password" name="password" required>
-              </div>
-              <div class="text"><a href="#">Forgot password?</a></div>
-              <div class="button input-box">
-                <button type="submit">Submit</button>
-              </div>
-              <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+    <div class="container">
+        <input type="checkbox" id="flip">
+        <div class="cover">
+            <div class="front">
+                <img src="Don't worry, we'll remember for you.png" alt="">
+                <div class="text">
+                    <span class="text-1">Don't worry, <br> we'll remember for you...</span>
+                </div>
             </div>
-          </form>
-        </div>
-        <div class="signup-form">
-          <div class="title">Signup</div>
-          <form id="signupForm" onsubmit="return validateSignupForm()">
-            <div class="input-boxes">
-              <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input type="text" id="signupName" placeholder="Enter your name" name="name" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-envelope"></i>
-                <input type="text" id="signupEmail" placeholder="Enter your email" name="email" required>
-              </div>
-              <div class="input-box">
-                <i class="fas fa-lock"></i>
-                <input type="password" id="signupPassword" placeholder="Enter your password" name="password" required>
-              </div>            
-              <div class="button input-box">
-                <button type="submit">Submit</button>
-              </div>
-              <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+            <div class="back">
+                <img class="backImg" src="Don't worry, we'll remember for you.png" alt="">
+                <div class="text">
+                    <span class="text-1">Don't worry, <br> we'll remember for you...</span>
+                </div>
             </div>
-          </form>
         </div>
-      </div>
+        <div class="forms">
+            <div class="form-content">
+                <div class="login-form">
+                    <div class="title">Login</div>
+                    <form id="loginForm" onsubmit="return validateLoginForm(event)">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-envelope"></i>
+                                <input type="text" id="loginEmail" placeholder="Enter your email" name="email" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="loginPassword" placeholder="Enter your password" name="password" required>
+                            </div>
+                            <div class="text"><a href="#">Forgot password?</a></div>
+                            <div class="button input-box">
+                                <button type="submit">Submit</button>
+                            </div>
+                            <div class="text sign-up-text">Don't have an account? <label for="flip">Signup now</label></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="signup-form">
+                    <div class="title">Signup</div>
+                    <form id="signupForm" onsubmit="return validateSignupForm(event)">
+                        <div class="input-boxes">
+                            <div class="input-box">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="signupName" placeholder="Enter your name" name="name" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-envelope"></i>
+                                <input type="text" id="signupEmail" placeholder="Enter your email" name="email" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signupPassword" placeholder="Enter your password" name="password" required>
+                            </div>
+                            <div class="button input-box">
+                                <button type="submit">Submit</button>
+                            </div>
+                            <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <script>
-     function redirectToHome() {
-      window.location.href = "home.html";
-    }
-    
-function validateLoginForm() {
-  var email = document.getElementById("loginEmail").value;
-  var password = document.getElementById("loginPassword").value;
+    <script>
+        function redirectToHome() {
+            window.location.href = "home.html";
+        }
 
-  if (email === "" || password === "") {
-    alert("Please fill in all fields for login.");
-    return false;
-  } else {
-    redirectToHome();
-    return true;
-  }
-}
+        function validateLoginForm(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-function validateSignupForm() {
-  var name = document.getElementById("signupName").value;
-  var email = document.getElementById("signupEmail").value;
-  var password = document.getElementById("signupPassword").value;
+            var email = document.getElementById("loginEmail").value;
+            var password = document.getElementById("loginPassword").value;
 
-  if (name === "" || email === "" || password === "") {
-    alert("Please fill in all fields for signup.");
-    return false;
-  } else {
-    redirectToHome();
-    return true;
-  }
-}
+            if (email === "" || password === "") {
+                alert("Please fill in all fields for login.");
+                return false;
+            } else {
+                redirectToHome();
+                return true;
+            }
+        }
 
+        function validateSignupForm(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-   
-  </script>
+            var name = document.getElementById("signupName").value;
+            var email = document.getElementById("signupEmail").value;
+            var password = document.getElementById("signupPassword").value;
+
+            if (name === "" || email === "" || password === "") {
+                alert("Please fill in all fields for signup.");
+                return false;
+            } else {
+                redirectToHome();
+                return true;
+            }
+        }
+    </script>
 </body>
 </html>
