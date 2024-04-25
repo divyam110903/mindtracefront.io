@@ -75,6 +75,10 @@
   </div>
 
   <script>
+     function redirectToHome() {
+      window.location.href = "home.html";
+    }
+    
     function validateLoginForm() {
       var email = document.getElementById("loginEmail").value;
       var password = document.getElementById("loginPassword").value;
@@ -83,8 +87,11 @@
         alert("Please fill in all fields for login.");
         return false;
       }
+      else{
 
       return true;
+        redirectToHome()
+      }
     }
 
     function validateSignupForm() {
@@ -96,13 +103,14 @@
         alert("Please fill in all fields for signup.");
         return false;
       }
+    else{
 
       return true;
+        redirectToHome()
+      }
     }
 
-    function redirectToHome() {
-      window.location.href = "home.html";
-    }
+   
   </script>
 </body>
 </html>
