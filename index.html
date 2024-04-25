@@ -79,36 +79,33 @@
       window.location.href = "home.html";
     }
     
-    function validateLoginForm() {
-      var email = document.getElementById("loginEmail").value;
-      var password = document.getElementById("loginPassword").value;
+function validateLoginForm() {
+  var email = document.getElementById("loginEmail").value;
+  var password = document.getElementById("loginPassword").value;
 
-      if (email === "" || password === "") {
-        alert("Please fill in all fields for login.");
-        return false;
-      }
-      else{
+  if (email === "" || password === "") {
+    alert("Please fill in all fields for login.");
+    return false;
+  } else {
+    redirectToHome();
+    return true;
+  }
+}
 
-      return true;
-        redirectToHome()
-      }
-    }
+function validateSignupForm() {
+  var name = document.getElementById("signupName").value;
+  var email = document.getElementById("signupEmail").value;
+  var password = document.getElementById("signupPassword").value;
 
-    function validateSignupForm() {
-      var name = document.getElementById("signupName").value;
-      var email = document.getElementById("signupEmail").value;
-      var password = document.getElementById("signupPassword").value;
+  if (name === "" || email === "" || password === "") {
+    alert("Please fill in all fields for signup.");
+    return false;
+  } else {
+    redirectToHome();
+    return true;
+  }
+}
 
-      if (name === "" || email === "" || password === "") {
-        alert("Please fill in all fields for signup.");
-        return false;
-      }
-    else{
-
-      return true;
-        redirectToHome()
-      }
-    }
 
    
   </script>
